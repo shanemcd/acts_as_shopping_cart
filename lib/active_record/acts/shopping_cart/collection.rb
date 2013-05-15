@@ -37,7 +37,7 @@ module ActiveRecord
         def remove(object, quantity = 1)
           if cart_item = item_for(object)
             if cart_item.quantity <= quantity
-              cart_item.delete
+              cart_item.destroy
             else
               cart_item.quantity = (cart_item.quantity - quantity)
               cart_item.save

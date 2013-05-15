@@ -119,7 +119,7 @@ describe ActiveRecord::Acts::ShoppingCart::Collection do
 
       context "remove more items than those on cart" do
         it "removes the shopping cart item object completely" do
-          shopping_cart_item.should_receive(:delete)
+          shopping_cart_item.should_receive(:destroy)
           subject.remove(object, 99)
         end
       end
